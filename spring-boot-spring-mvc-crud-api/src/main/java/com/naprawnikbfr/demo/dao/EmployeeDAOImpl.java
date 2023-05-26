@@ -23,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     @Override
     public List<Employee> findAll() {
         //create a query
-        TypedQuery<Employee> theQuery = entityManager.createQuery("FROM Employee", Employee.class);
+        TypedQuery<Employee> theQuery = entityManager.createQuery("FROM Employee ORDER BY lastName", Employee.class);
 
         //execute a query and get result
         List<Employee> employees = theQuery.getResultList();
